@@ -54,9 +54,9 @@ class InserirPerguntaView(View):
         detalhe = request.POST.get('detalhe')
         tentativa = request.POST.get('tentativa')
         data_criacao = timezone.now()
-        
-        pergunta = Pergunta(titulo=titulo, detalhe=detalhe, 
-tentativa=tentativa, 	data_criacao=data_criacao, usuario=usuario)
+
+        pergunta = Pergunta(titulo=titulo, detalhe=detalhe,
+                            tentativa=tentativa, data_criacao=data_criacao, usuario=usuario)
         pergunta.save()
 
         return redirect(reverse('forum:detalhe', args=[pergunta.id]))
